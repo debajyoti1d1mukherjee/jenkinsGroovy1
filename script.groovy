@@ -14,3 +14,5 @@ def deployApp(){
 	echo "strParam1 paramValue is  ${strParam1}========"
 	echo "env  paramValue is  ${ENV1}========"
 }
+
+return this
