@@ -5,6 +5,7 @@ pipeline {
     parameters {
         choice(name: 'VERSION', choices: ['1.1.0', '1.2.0', '1.3.0'], description: '')
         booleanParam(name: 'executeTests', defaultValue: true, description: '')
+        string(name: 'stringParam',defaultValue: 'stringVal', description: '')
     }
     stages {
         stage("init") {
@@ -24,7 +25,7 @@ pipeline {
         stage("test") {
             when {
                 expression {
-                    params.executeTests
+                    params.executeTests == true
                 }
             }
             steps {
